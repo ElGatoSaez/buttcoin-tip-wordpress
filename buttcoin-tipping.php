@@ -42,4 +42,10 @@ function buttcoin_tipping_settings()
 		add_settings_field("buttcoin-tipping-amount", "Amount you want people to tip", "buttcoin_tipping_amount_textbox", "buttcoin-tipping", "buttcoin_tipping_config_section");
 		add_settings_field("buttcoin-tipping-callback", "API Callback URL (Leave it blank if you don't know what does it mean)", "buttcoin_tipping_callback_textbox", "buttcoin-tipping", "buttcoin_tipping_config_section");
 		
+		register_setting("butting_tipping_config_section", "buttcoin-tipping-account");
+		register_setting("butting_tipping_config_section", "buttcoin-tipping-amount");
+		register_setting("butting_tipping_config_section", "buttcoin-tipping-callback");
+	}
+
+function
  
