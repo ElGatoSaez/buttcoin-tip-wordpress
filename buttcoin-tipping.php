@@ -91,5 +91,5 @@ function add_buttcoin_tipping_icon($content)
 		return $content = $content . $html;
 }
 
-add_filter("the_content", "add_social_share_icons");
+add_filter("the_content", "add_buttcoin_tipping_icon");
 ?>  
