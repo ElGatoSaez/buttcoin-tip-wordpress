@@ -86,7 +86,7 @@ function add_buttcoin_tipping_icon($content)
 		
 		global $post;
 
-		$html = $html . "<div class='facebook'><a target='_blank' href='$fURL'>Dona acá</a></div>"
+		$html = $html . "<div class='facebook'><a target='_blank' href='$fURL'>Dona acá</a></div>";
 		
 		return $content = $content . $html;
 }
