@@ -16,7 +16,7 @@ function buttcoin_tipping_menu_item()
 
 add_action("admin_menu", "buttcoin_tipping_menu_item");
 
-function buttcoin_tipping_opt
+function buttcoin_tipping_opt()
 	{
 		?>
 			<div class="wrap">
