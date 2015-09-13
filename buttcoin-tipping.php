@@ -50,19 +50,46 @@ function buttcoin_tipping_settings()
 function buttcoin_tipping_account_text()
 	{
 		?>
-			<input type="text" name="buttcoin-tipping-account" <?php get_option('buttcoin-tipping-account') ?> />
+			<input type="text" name="buttcoin-tipping-account" <?php $acc = get_option('buttcoin-tipping-account'); ?> />
 		<?php
 	}
 
 function buttcoin_tipping_amount_text()
 	{
 		?>
-			<input type="text" name="buttcoin-tipping-amount" <?php get_option('buttcoin-tipping-amount') ?> />
+			<input type="text" name="buttcoin-tipping-amount" <?php $butts = get_option('buttcoin-tipping-amount'); ?> />
 		<?php
 	}
 
 function buttcoin_tipping_callback_text()
 	{
 		?>
-			<input type="text" name="buttcoin-tipping-callback" <?php checked(get_option('buttcoin-tipping-amount') ?> />
+			<input type="text" name="buttcoin-tipping-callback" <?php $cburl = checked(get_option('buttcoin-tipping-callback'); ?> />
+		<?php
+	}
+
+function original_buttcoin_tipping()
+	{
+		$api = "https://hira.io/butt.php?a=new&amount=" . $butts . "&callback=" . $cburl . "&deposit_to=" . $acc;
+		// Retreiving those contents
+		$getJson = file_get_contents($api);
+		// Decoding that JSON to be readable
+		$nowJson = json_decode($getJson, true);
+		// Getting the Transaction ID
+		$tID = $nowJson['id'];
+		// Then getting the final webpage (dun dun dun dun)
+		$fURL = "https://hira.io/buttwait.php?tid=" . $tID;
+	}
+function add_buttcoin_tipping_icon($content)
+	{
+		$html = "<div class='buttcoin-tipping-wrapper'><div class='butt-on'> Dona un buttcoin: </div>";
+		
+		global $post;
+
+		$html = $html . "<div class='facebook'><a target='_blank' href='$fURL'>Dona acá</a></div>"
+		
+		return $content = $content . $html;
+}
+
+add_filter("the_content", "add_social_share_icons");
 ?>  
