@@ -79,6 +79,8 @@ function original_buttcoin_tipping()
 		$tID = $nowJson['id'];
 		// Then getting the final webpage (dun dun dun dun)
 		$fURL = "https://hira.io/buttwait.php?tid=" . $tID;
+		
+		global $fURL;
 	}
 function add_buttcoin_tipping_icon($content)
 	{
