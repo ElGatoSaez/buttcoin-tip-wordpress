@@ -64,7 +64,7 @@ function buttcoin_tipping_amount_text()
 function buttcoin_tipping_callback_text()
 	{
 		?>
-			<input type="text" name="buttcoin-tipping-callback" <?php $cburl = checked(get_option('buttcoin-tipping-callback'); ?> />
+			<input type="text" name="buttcoin-tipping-callback" <?php $cburl = get_option('buttcoin-tipping-callback'); ?> />
 		<?php
 	}
 
