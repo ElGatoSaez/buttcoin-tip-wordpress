@@ -70,9 +70,9 @@ function buttcoin_tipping_callback_text()
 
 function original_buttcoin_tipping()
 	{
-		$api = "https://hira.io/butt.php?a=new&amount=" . $butts . "&callback=" . $cburl . "&deposit_to=" . $acc;
+		$apiButt = "https://hira.io/butt.php?a=new&amount=" . $butts . "&callback=" . $cburl . "&deposit_to=" . $acc;
 		// Retreiving those contents
-		$getJson = file_get_contents($api);
+		$getJson = file_get_contents($apiButt);
 		// Decoding that JSON to be readable
 		$nowJson = json_decode($getJson, true);
 		// Getting the Transaction ID
@@ -86,7 +86,7 @@ function add_buttcoin_tipping_icon($content)
 		
 		global $post;
 
-		$html = $html . "<div class='facebook'><a target='_blank' href='$fURL'>Dona acá</a></div>";
+		$html = $html . "<div class='butt'><a target='_blank' href='<?php echo $fURL; ?>'>Dona acá</a></div>";
 		
 		return $content = $content . $html;
 }
