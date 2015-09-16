@@ -8,7 +8,7 @@ Version: 1.0
 Author: Sebastián Sáez
 */
 
-// Acá estamos añadiendo un submenú a los plugins de WordPress
+// Acá estamos añadiendo un submenú a los plugins de WordPress.
 function buttcoin_tipping_menu_item()
 	{
 		add_submenu_page("options-general.php", "Buttcoin Tipping", "Buttcoin Tipping", "manage_options", "buttcoin-tipping", "buttcoin_tipping_opt");
